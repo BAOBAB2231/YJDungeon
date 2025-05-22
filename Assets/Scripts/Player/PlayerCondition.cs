@@ -1,12 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCondition : MonoBehaviour
+public interface IDamageable
+{
+    void TakePhysicalDamage(int damage);
+}
+
+public class PlayerCondition : MonoBehaviour, IDamageable
 {
     public UICondition uiCondition;
 
     Condition health { get { return uiCondition.health; } }
+
+    public event Action onTakeDamage;
 
     void Update()
     {
@@ -26,5 +34,11 @@ public class PlayerCondition : MonoBehaviour
     public void Die()
     {
         Debug.Log("ав╬З╢ы.");
+    }
+
+    public void TakePhysicalDamage(int damage)
+    {
+        health.Subtract(damage);
+        onTakeDamage?.Invoke();
     }
 }
