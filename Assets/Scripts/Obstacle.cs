@@ -11,6 +11,7 @@ public class Obstacle : MonoBehaviour
 
     void Start()
     {
+        GetComponent<Renderer>().material.color = Color.red;
         InvokeRepeating("DealDamage", 0, damageRate);
     }
 
