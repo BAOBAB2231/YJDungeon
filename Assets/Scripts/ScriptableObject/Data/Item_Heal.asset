@@ -18,4 +18,4 @@ MonoBehaviour:
   dropPrefab: {fileID: 5990948050901726362, guid: be15148868cd8cf43a70bf88b2d0356d, type: 3}
   consumables:
   - type: 0
-    value: 30
+    value: 20
