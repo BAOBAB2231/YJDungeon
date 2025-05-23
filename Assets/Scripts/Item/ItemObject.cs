@@ -40,6 +40,6 @@ public class ItemObject : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
-        // 아직 E키를 안씀.
+        // E키를 쓸 때 구현.
     }
 }
