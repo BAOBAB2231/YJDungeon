@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+public enum ItemType
+{
+    Consumable
+}
+
 public enum ConsumableType
 {
     Health,
@@ -23,6 +28,7 @@ public class ItemData : ScriptableObject
     [Header("Info")]
     public string displayName;
     public string description;
+    public ItemType type;
     public GameObject dropPrefab;
 
     [Header("Consumable")]

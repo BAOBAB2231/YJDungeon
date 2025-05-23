@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: "\uC18D\uB3C4 \uC99D\uAC00"
   description: "\uC7A0\uC2DC \uC18D\uB3C4\uB97C \uC99D\uAC00 \uC2DC\uD0B5\uB2C8\uB2E4."
+  type: 0
   dropPrefab: {fileID: 4609337933565173368, guid: 535dbf2640f0aad4d8c75ea9a7f7bf9b, type: 3}
-  consumables: []
+  consumables:
+  - type: 1
+    value: 5

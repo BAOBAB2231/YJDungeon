@@ -11,6 +11,26 @@ public interface IInteractable
 public class ItemObject : MonoBehaviour, IInteractable
 {
     public ItemData data;
+    public string respawnerPrefabName;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(!other.CompareTag("Player")) return;
+
+        Player player = other.GetComponent<Player>();
+        if (player != null)
+        {
+            player.itemData = data;
+            player.useItem?.Invoke();
+
+            GameObject go = new GameObject("Respawner");
+            ItemRespawner respawner = go.AddComponent<ItemRespawner>();
+            respawner.prefabName = respawnerPrefabName;
+            respawner.Respawn(transform.position);
+
+            Destroy(gameObject);
+        }
+    }
 
     public string GetInteractPrompt()
     {
@@ -20,8 +40,6 @@ public class ItemObject : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
-        CharacterManager.Instance.Player.itemData = data;
-        CharacterManager.Instance.Player.UseItem?.Invoke();
-        Destroy(gameObject);
+        // 아직 E키를 안씀.
     }
 }
