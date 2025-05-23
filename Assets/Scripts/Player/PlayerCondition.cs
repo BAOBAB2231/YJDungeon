@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public interface IDamageable
@@ -11,6 +9,7 @@ public interface IDamageable
 public class PlayerCondition : MonoBehaviour, IDamageable
 {
     public UICondition uiCondition;
+    public GameObject gameOverUI;
 
     Condition health { get { return uiCondition.health; } }
 
@@ -33,7 +32,8 @@ public class PlayerCondition : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        Debug.Log("ав╬З╢ы.");
+        gameOverUI.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void TakePhysicalDamage(int damage)
