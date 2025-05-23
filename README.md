@@ -32,7 +32,9 @@ Unity 2022.3.17f1 기반의 3D 물리 점프 게임입니다.
 
 ## 🖼️ 게임 화면 예시
 
-<img src="README_assets/game_play.png" width="480"/>  
+<p align="center">
+  <img src="./README_assets/game_play.png" width="480"/>
+</p>
 _점프패드와 발판을 이용해 올라가는 모습_
 
 ---
